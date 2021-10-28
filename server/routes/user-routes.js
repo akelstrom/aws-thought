@@ -4,7 +4,7 @@ const router = express.Router();
 const AWS = require("aws-sdk");
 
 const awsConfig = {
-  region: "us-east-2"
+  region: "us-east-2",
 };
 
 AWS.config.update(awsConfig);
@@ -26,10 +26,9 @@ router.get("/users", (req, res) => {
   });
 });
 
-//get thoughts from a user by username at api/users/username
+// get thoughts from a user
 router.get("/users/:username", (req, res) => {
   console.log(`Querying for thought(s) from ${req.params.username}.`);
-
   const params = {
     TableName: table,
     KeyConditionExpression: "#un = :user",
@@ -37,12 +36,13 @@ router.get("/users/:username", (req, res) => {
       "#un": "username",
       "#ca": "createdAt",
       "#th": "thought",
+      "#img": "image", // add the image attribute alias
     },
     ExpressionAttributeValues: {
       ":user": req.params.username,
     },
-    ProjectionExpression: "#th, #ca",
-    ScanIndexForward: false,
+    ProjectionExpression: "#un, #th, #ca, #img", // add the image to the database response
+    ScanIndexForward: false, // false makes the order descending(true is default)
   };
 
   dynamodb.query(params, (err, data) => {
@@ -64,12 +64,16 @@ router.post("/users", (req, res) => {
       username: req.body.username,
       createdAt: Date.now(),
       thought: req.body.thought,
+      image: req.body.image, // add new image attribute
     },
   };
   // database call
   dynamodb.put(params, (err, data) => {
     if (err) {
-      console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
+      console.error(
+        "Unable to add item. Error JSON:",
+        JSON.stringify(err, null, 2)
+      );
       res.status(500).json(err); // an error occurred
     } else {
       console.log("Added item:", JSON.stringify(data, null, 2));
