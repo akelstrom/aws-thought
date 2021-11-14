@@ -41,7 +41,7 @@ To run the project locally, navigate to the terminal and in the project's root d
 ```` 
 Note: Test endpoints (using Insomnia Core or Postman) with port 3001.
 ````
-##### Instructions
+#### Instructions
 1. Navigate to root directory of application in the terminal and run `npm start`
 2. Create a new collection (Postman) or enviornment (Insomnia Core) for the aws-thought endpoints
 3. Test the following endpoints: Get all thoughts, get thoughts by user, add thought, add image** 
@@ -52,6 +52,7 @@ Note: Test endpoints (using Insomnia Core or Postman) with port 3001.
 |GET thought by user|localhost:3001/api/users/{username}|
 |POST thought|localhost:3001/api/users|
 |POST image|localhost:3001/api/image-upload|
+
 
 ```` 
 Note: To test the image upload, change the body type to `Multi-structure form` and then upload the image as the "pair" in the key pair value. 
