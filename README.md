@@ -10,7 +10,7 @@ AWS Thoughts is a refactored cloud-based version of a Full-Stack Social Media ME
 
 ### Built With
 * AWS Services
-    * IAM (Identity and Access Management) helps ensure secure access to AWS services and resources. The IAM user console enables you to create and manage AWS users and groups as well as allow and deny access to AWS resources.
+    * IAM (Identity and Access Management) helps ensure secure access to AWS services and resources. 
     * S3 (Simple Storage Service) is an object storage service. S3 allows customers to store and protect any amount of data for various uses, ranging from web and mobile applications to data archives and hybrid cloud storage. For this application, it's used to store and retrieve static assets (images). 
     * DynamoDB is a NoSQL key-value and document database that delivers incredibly fast performance—no matter the size of your data. This fully managed and multi-region database provides built-in security, backup, and in-memory caching for web applications. DynamoDB is replacing MongoDB as the database for this application. 
     * EC2 (Elastic Compute Cloud) is a secure, scalable web service designed to simplify cloud computing. EC2 offers flexibility when you need to obtain and configure capacity for your web applications. EC2 was used to configure a Linux server to host the application.
@@ -38,6 +38,7 @@ Make sure `Node` is installed on your computer (if not install using [homebrew~]
 To run the project locally, navigate to the terminal and in the project's root directory run the following command: `npm start`. Once the project is done building/compling , it should load in your default browser at this on port 3000. [http://localhost:3000/](http://localhost:3000/)
 
 ### Testing
+
 ```` 
 Note: Test endpoints (using Insomnia Core or Postman) with port 3001.
 ````
@@ -45,6 +46,8 @@ Note: Test endpoints (using Insomnia Core or Postman) with port 3001.
 1. Navigate to root directory of application in the terminal and run `npm start`
 2. Create a new collection (Postman) or enviornment (Insomnia Core) for the aws-thought endpoints
 3. Test the following endpoints: Get all thoughts, get thoughts by user, add thought, add image** 
+
+
 
 |Request Type|Endpoint URL|
 |------------|------------|
