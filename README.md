@@ -56,10 +56,8 @@ Note: Test endpoints (using Insomnia Core or Postman) with port 3001.
 |POST thought|localhost:3001/api/users|
 |POST image|localhost:3001/api/image-upload|
 
+* Note: To test the image upload, change the body type to `Multi-structure form` and then upload the image as the "pair" in the key pair value. 
 
-```` 
-Note: To test the image upload, change the body type to `Multi-structure form` and then upload the image as the "pair" in the key pair value. 
-````
 
 ### Author
 Made with &hearts; by Alexandra 
