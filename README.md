@@ -38,16 +38,12 @@ Make sure `Node` is installed on your computer (if not install using [homebrew~]
 To run the project locally, navigate to the terminal and in the project's root directory run the following command: `npm start`. Once the project is done building/compling , it should load in your default browser at this on port 3000. [http://localhost:3000/](http://localhost:3000/)
 
 ### Testing
+<i>Note: Test endpoints (using Insomnia Core or Postman) with port 3001.</i>
 
-```` 
-Note: Test endpoints (using Insomnia Core or Postman) with port 3001.
-````
 #### Instructions
 1. Navigate to root directory of application in the terminal and run `npm start`
 2. Create a new collection (Postman) or enviornment (Insomnia Core) for the aws-thought endpoints
 3. Test the following endpoints: Get all thoughts, get thoughts by user, add thought, add image** 
-
-
 
 |Request Type|Endpoint URL|
 |------------|------------|
@@ -56,8 +52,7 @@ Note: Test endpoints (using Insomnia Core or Postman) with port 3001.
 |POST thought|localhost:3001/api/users|
 |POST image|localhost:3001/api/image-upload|
 
-* Note: To test the image upload, change the body type to `Multi-structure form` and then upload the image as the "pair" in the key pair value. 
-
+<i>Note: To test the image upload, change the body type to `Multi-structure form` and then upload the image as the "pair" in the key pair value.</i> 
 
 ### Author
 Made with &hearts; by Alexandra 
